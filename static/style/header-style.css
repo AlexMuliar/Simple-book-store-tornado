@@ -1,0 +1,63 @@
+.common{
+    color: red;
+}
+.navigation-bar{
+    border: 5px solid rgba(0, 0, 0, 0.700);
+    padding: 0px;
+    margin-top: 100px;
+    margin-left: 10%;
+    margin-right: 7%;
+    -moz-border-radius: 26px 26px 26px 26px ;
+    -webkit-border-radius: 26px 26px 26px 26px ;
+    border-radius: 26px 26px 26px 26px ;
+}
+.input-field{
+    -moz-border-radius: 15px 15px 15px 15px ;
+    -webkit-border-radius: 15px 15px 15px 15px ;
+    border-radius: 15px 15px 15px 15px ;
+    margin-left: 10px;
+    height: 40px;
+    width: 250px; 
+}
+.btn-style{
+    background-image: url(../image/search.svg); /* 16px x 16px */
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 16px;           /* make this the size of your image */
+    padding-left: 16px;     /* make text start to the right of the image */
+    vertical-align: middle; /* align the text vertically centered */
+}
+ul {
+    background-color: rgba(138, 90, 2, 0.911);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -moz-border-radius: 20px 20px 20px 20px ;
+    -webkit-border-radius: 20px 20px 20px 20px ;
+    border-radius: 20px 20px 20px 20px ;
+}
+li {
+    float: left;
+    border: 2px solid rgba(56, 56, 56, 0.7);
+    margin-right: 2px;
+    width: 120px;
+}
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+::-webkit-input-placeholder{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin-left: 20px
+}
+.test{
+    color: red;
+}

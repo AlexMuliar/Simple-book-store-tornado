@@ -1,0 +1,142 @@
+.back{
+    background-image: url("../image/library-background.jpg");
+}
+.book-list-div{
+    position: absolute;
+    z-index: -1;
+    background-image: url("../image/correct/back_2.jpg");
+    background-size: 100%;
+    width: 81%;
+    margin-right: 8%;
+    margin-left: 11%;
+    margin-top: -15px;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    border: 5px solid rgba(0, 0, 0, 0.700);
+    min-height: 500px
+}
+.detail-page{
+    position: absolute;
+    z-index: -1;
+    background-image: url("../image/correct/back_2.jpg");
+    background-size: 100%;
+    width: 70%;
+    margin-right: 8%;
+    margin-left: 11%;
+    margin-top: -15px;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: 5px solid rgba(0, 0, 0, 0.700);
+}
+.common-book{
+    background-image: url("../image/correct/back_1.jpg");
+    background-size: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.603);
+    margin-top: 50px;
+    margin-right: 5%;
+    margin-left: 15%;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    background-color: rgb(236, 201, 104);
+    min-height: 350px;
+}
+.book_title{
+    font-weight: 450;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-bottom: -10px;
+    color: rgb(27, 27, 27);
+}
+.book_title:hover{
+    color: rgb(56, 56, 56)
+}
+.tag-link:hover{
+    color: rgb(15, 15, 15);
+    text-decoration-line: underline;
+}
+.book_author{
+    font-size: 23px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(46, 45, 45);
+    margin-left: 10px;
+}
+.book_author:hover{
+    color: rgb(97, 97, 97);;
+}
+.book_description{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-indent: 15px;
+}
+.hr-line{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid rgba(56, 51, 51, 0.664);
+    margin: 1em 0;
+    padding: 0; 
+}
+.book-characteristic{
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    padding-top: 5px;
+}
+.general-book-cover{
+    border-image: 6px;
+    padding: 6px;
+    border: 2px solid #021a40;
+    width: 160px;
+    height: 240px;
+    float: left;
+    margin: 7px 15px 6px 0;
+}
+.general-book-cover:hover{
+    padding: 1px;
+    width: 170px;
+    height: 250px;
+}
+.buy-button{
+    height: 50px;
+    width: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px; 
+    border: 2px solid #021a40;
+    background-color: rgb(46, 255, 46);
+    -moz-border-radius: 26px 26px 26px 26px ;
+    -webkit-border-radius: 26px 26px 26px 26px ;
+    border-radius: 26px 26px 26px 26px ;
+}
+.buy-buttton:hover{
+    background-color: rgb(223, 84, 79); 
+}
+.order-form{
+    padding-left: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px; 
+}
+.order-field{
+    -moz-border-radius: 26px 26px 26px 26px ;
+    -webkit-border-radius: 26px 26px 26px 26px ;
+    border-radius: 26px 26px 26px 26px ;
+    height: 40px;
+    width: 250px;
+}
+.arrow:link{
+    color: rgb(165, 61, 1);
+}
+.arrow:hover{
+    color: red;
+}
+.test-style{
+    color: rgba();
+}
