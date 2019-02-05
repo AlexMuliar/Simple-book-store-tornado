@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="icon" href="{{ static_url( 'image/library-ico2.png' ) }}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url( 'style/common-style.css' )}}">
+</head>
+<body class="back">
+    <header>
+        {% include 'header.html' %}
+    </header>
+    
+    <div class="book-list-div">
+        {% if search %}
+            <p class="book_title" style="padding-left: 200px">
+                Result by require "{{ search }}"
+            </p>
+            <hr class="hr-line">  
+        {% end %}
+        
+        {% for book in books %}
+        <div class="common-book">
+            <span class="book_title" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'">
+                {{ book["title"] }}               
+            </span>
+            <span class="book_author" onClick="location.href='../author/{{ book['author'].replace(' ', '-') }}'">
+                By {{ book["author"] }}
+            </span>
+            <hr class="hr-line">  
+            <div>
+                {% if book["image"] %}
+                    <img src="{{ book['image'] }}" class="general-book-cover" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'"/>
+                {% else %}
+                    <img src="{{ static_url( 'image/defbookcover-min.jpg' ) }}" class="general-book-cover" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'"/> 
+                {% end %}
+            </div>
+            <div> 
+                <span class="book-characteristic">
+                    Released:
+                    {% if book["publishing_date"] >= 0%} 
+                        {{ book["publishing_date"] }}y.
+                    {% else %}
+                        {{ book["publishing_date"] * -1 }} BC.
+                    {% end %}
+                </span>
+                <span class="book-characteristic">
+                    Rating: {{ book["rating"] }}
+                </span>
+                <span class="book-characteristic" onClick="location.href='../{{ book['ganre'].replace(' ', '-') }}'">
+                    Ganre: 
+                    <span class="tag-link">
+                        {{ book['ganre'] }}
+                    </span>
+                </span>
+                <br>
+                <span class="book-characteristic">
+                    Description: 
+                </span>
+                <div class="book_description">
+                    <p>
+                        {% raw book["description"] %}
+                        <a href="book\{{ book['title'].replace(' ', '-') }}" class="arrow">
+                            <p style="text-align: right; padding-right: 30px;">
+                                Go to book page>>>
+                            </p>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% end %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ author['name']['first']}} {{ author['name']['second'] }}</title>
+    <link rel="icon" href="{{ static_url( 'image/library-ico2.png' ) }}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url( 'style/common-style.css' )}}">
+</head>
+<body class="back">
+    <header>
+        {% include 'header.html' %}
+    </header>
+    <div class="detail-page" background="{{ static_url( 'image/back_1.jpg ') }}">
+            <span class="book_title">
+                {{ author["name"]['first'] }} 
+                {% if author['name']['addactive'] %}
+                    {{author['name']['addactive']}}
+                {% end %}
+                {{ author['name']['second'] }}               
+            </span>
+            <hr class="hr-line" style="margin-left: 60px; margin-right: 60px">  
+        <div>
+            {% if author['img'] %}
+                <img src="{{ author['img'] }}" class="general-book-cover" style="margin-left: 40px"/>
+            {% else %}
+                <img src="{{ static_url( 'image/defbookcover-min.jpg' ) }}" class="general-book-cover"/> 
+            {% end %}
+        </div>
+        <div class="book_description">
+                <span class="book-characteristic">
+                    <b>Born: 
+                    {% if author['born']['year'] %}
+                        {{ author['born']['year'] }}.
+                    {% end %}
+                    {% if author['born']['month'] %}
+                        {{ author['born']['month'] }} of
+                    {% end %} 
+                    {% if author['born']['day'] > 0 %}
+                        {{ author['born']['day'] }}y
+                    {% else %}
+                        {{ author['born']['day'] * -1 }}BC
+                    {% end %}</b>
+                </span>
+                <p style="min-height: 220px">
+                    {% raw author["description"] %}
+                </p>
+                <p class="book_title" style="padding-top: 40px">
+                    Books by {{ author["name"]['first'] }} 
+                    {% if author['name']['addactive'] %}
+                        {{author['name']['addactive']}}
+                    {% end %}
+                    {{ author['name']['second'] }}:      
+                </p>
+            </div>
+            {% for book in books %}
+            <div class="common-book">
+                <span class="book_title" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'">
+                    {{ book["title"] }}               
+                </span>
+                <hr class="hr-line">  
+                <div>
+                    {% if book["image"] %}
+                        <img src="{{ book['image'] }}" class="general-book-cover" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'"/>
+                    {% else %}
+                        <img src="{{ static_url( 'image/defbookcover-min.jpg' ) }}" class="general-book-cover" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'"/> 
+                    {% end %}
+                </div>
+                
+                <div style="padding-top: 10px">
+                    <span class="book-characteristic">
+                        Released:
+                        {% if book["publishing_date"] >= 0%} 
+                            {{ book["publishing_date"] }}y.
+                        {% else %}
+                            {{ book["publishing_date"] * -1 }} BC.
+                        {% end %}
+                    </span>
+                    <span class="book-characteristic">
+                        Rating: {{ book["rating"] }}
+                    </span>
+                    <span class="book-characteristic" onClick="location.href='../{{ book['ganre'].replace(' ', '-') }}'">
+                        Ganre: 
+                        <span class="tag-link">
+                            {{ book['ganre'] }}
+                        </span>
+                    </span>
+                    <br>
+                    <span class="book-characteristic">
+                        Description: 
+                    </span>
+                    <div class="book_description">
+                        <p>
+                            {% raw book["description"] %}
+                            <a href="../book/{{ book['title'].replace(' ', '-') }}" class="arrow">
+                                <p style="text-align: right; padding-right: 30px;">
+                                    Go to book page>>>
+                                </p>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% end %}
+    </div>
+</body>
+</html>

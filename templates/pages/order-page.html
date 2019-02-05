@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order {{ book['title'] }}</title>
+    <link rel="icon" href="{{ static_url( 'image/library-ico2.png' ) }}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url( 'style/common-style.css' )}}">
+</head>
+<body class="back">
+    <header>
+        {% include 'header.html' %}
+    </header>
+    
+    <div class="book-list-div">
+            <p class="book_title" style="padding-left: 200px">
+                    Order book
+            </p>
+            <hr class="hr-line" style="margin-left: 60px; margin-right: 60px">  
+        <form action="./purchase" method="POST" class="order-form">
+            <input type="hidden" name="book_title" value="{{ book['title'] }}">
+            <input type="hidden" name="cash" value="{{ book['price'] }}"><br>
+            First  name:  <input type="text" class="order-field" name="first_name" placeholder="Name" required/><br>
+            Second name: <input type="text" class="order-field" name="second_name" placeholder="Family Name" required/><br>
+            Phone: <input type="text" class="order-field" name="phone" placeholder="Phone number" required/><br>
+            E-mail: <input type="email" class="order-field" name="email" placeholder="E-mail" required/><br>
+            Adress: <input type="text" class="order-field" name="adress" placeholder="Adress" required/><br><br>
+            Cash: {{ book['price'] }}0$<br><br>
+            <input type="submit" class="buy-button" name="Buy">
+        </form>
+    </div>
+</body>
+</html>

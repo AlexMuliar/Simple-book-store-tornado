@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book["title"] }}</title>
+    <link rel="icon" href="{{ static_url( 'image/library-ico2.png' ) }}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url( 'style/common-style.css' )}}">
+</head>
+<body class="back">
+        <header>
+            {% include 'header.html' %}
+        </header>
+        <div class="detail-page" background="{{ static_url( 'image/back_1.jpg ') }}">
+                <span class="book_title" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'">
+                    {{ book["title"] }}               
+                </span>
+                <span class="book_author" onClick="location.href='../author/{{ book['author'].replace(' ', '-') }}'">
+                    By {{ book["author"] }}
+                </span>
+                <hr class="hr-line">  
+                <div>
+                    {% if book["image"] %}
+                        <img src="{{ book['image'] }}" class="general-book-cover" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'"/>
+                    {% else %}
+                        <img src="{{ static_url( 'image/defbookcover-min.jpg' ) }}" class="general-book-cover" onClick="location.href='../book/{{ book['title'].replace(' ', '-') }}'"/> 
+                    {% end %}
+                </div>
+                <div> 
+                    <span class="book-characteristic">
+                        Released:
+                        {% if book["publishing_date"] >= 0%} 
+                            {{ book["publishing_date"] }}y.
+                        {% else %}
+                            {{ book["publishing_date"] * -1 }} BC.
+                        {% end %}
+                    </span>
+                    <span class="book-characteristic">
+                        Rating: {{ book["rating"] }}
+                    </span>
+                    <span class="book-characteristic" onClick="location.href='../{{ book['ganre'].replace(' ', '-') }}'">
+                        Ganre: 
+                        <span class="tag-link">
+                            {{ book['ganre'] }}
+                        </span>
+                    </span>
+                    <br>
+                    <button class="buy-button" onClick="location.href='../purchase?book={{ book['title'].replace(' ', '-') }}'">
+                        Buy {{ book['price']}}0$
+                    </button>
+                    <span class="book-characteristic">
+                        Description: 
+                    </span>
+                    <div class="book_description">
+                        <p>
+                            {% raw book["description"] %}
+                        </p>
+                        
+                        <p class="book_title" style="padding-top: 40px">
+                                User review:      
+                        </p>
+                        <p>
+                                Coming soon
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
